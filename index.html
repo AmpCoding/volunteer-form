@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capella Volunteers - Invitation</title>
+    <link rel="stylesheet" href="css/styles.wk07.css">
+</head>
+<body>
+<div class="top">
+    <a class="logo" href="volunteers.html">CapellaVolunteers<span class="org">.org</span></a>
+</div>
+<nav>
+    <ul>
+        <!-- Links won't work for week 7 -->
+        <li><a href="volunteers.html">Home</a></li>
+        <li><a href="volunteers.html" class="active">Invitation</a></li>
+        <li><a href="volunteers.html">Volunteers</a></li>
+        <li><a href="volunteers.html">Gallery</a></li>
+        <li><a href="volunteers.html">Registration</a></li>
+    </ul>
+</nav>
+<section>
+    <h2 class="hidden">Invitation Form</h2>
+    <!-- # means stay on this page -->
+    <form action="#" id="pageForm">
+        <label for="first-name-input" id="first-name-label">First name:</label>
+        <input type="text" name="first-name-input" id="first-name-input" placeholder="Enter first name">
+        <label for="last-name-input" id="last-name-label">Last name:</label>
+        <input type="text" name="last-name-input" id="last-name-input" placeholder="Enter last name">
+        <!-- Plain buttons, not submit buttons -->
+        <input type="button" value="Add" id="add-button">
+        <input type="button" value="Delete" id="delete-button">
+        <label id="volunteer-list-label" for="volunteer-list-area">Volunteer List:</label>
+        <!-- List display area -->
+        <textarea id="volunteer-list-area">
+
+        </textarea>
+        <input type="button" value="Sort by Name" id="sort-button">
+        <input type="button" value="Clear Volunteers" id="clear-button">
+    </form>
+</section>
+
+<footer>rev. 2024 for work in IT3240</footer>
+<!-- Script must be at the end of body -->
+<script src="js/volunteers.js"></script>
+</body>
+</html>
