@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --maroon: #800D1E;
+    --charcoal: #555555;
+    --lightgray: #f0f0f0;
+    --standard-gap: 1.5rem;
+    --standard-height: 1.25rem;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+html {
+    min-height: 100dvh;
+}
+
+body {
+    min-height: 100dvh;
+    display: grid; /* grid container for page */
+    grid-template-columns: 1fr;
+    /* 1st row CapellaVolunteers.org - auto height
+       2nd row nav bar - auto height
+       3rd row form - 1fr height
+       4th row output - 1fr height
+       5th row footer - auto height - helps keep footer at bottom */
+    grid-template-rows: auto auto 1fr 1fr auto;
+}
+
+.logo { /* logo at the top of the page */
+    text-decoration: none;
+    line-height: 1;
+    font-size: calc(var(--standard-height) * 2);
+    margin-left: var(--standard-gap);
+    margin-top: var(--standard-gap);
+    padding-top: var(--standard-gap);
+    letter-spacing: 3px;
+    color: var(--charcoal);
+}
+
+.org { /* .org is in maroon */
+    color: var(--maroon);
+}
+
+nav {
+    grid-column: 1 / -1; /* given the full width of the page */
+    grid-row: 2;
+    margin: 1rem 0;
+}
+
+/* Style ul as a horizontal nave bar */
+nav ul {
+    list-style: none;
+    margin: 0 0 0 var(--standard-gap);
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* display the list items horizontally */
+    color: white;
+    height: var(--standard-height);
+    width: 10rem;
+    line-height: var(--standard-height);
+    margin-top: 0.25rem;
+    text-align: center;
+    background-color: var(--charcoal);
+    text-decoration: none;
+}
+
+nav ul li a {
+    display: block; /* make the entire list item clickable */
+    color: white;
+    height: var(--standard-height);
+    padding: 0.25rem;
+    width: 10rem;
+    line-height: var(--standard-height);
+    text-align: center;
+    background-color: var(--charcoal);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: var(--maroon);
+}
+
+#pageForm {
+    /* grid (sub)container for the form */
+    grid-row: 3;
+    grid-column: 1;
+    height: 20dvh;
+    width: 65dvw;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
+    margin: var(--standard-gap) 0;
+}
+
+label {
+    font-size: var(--standard-height);
+    line-height: var(--standard-height);
+    text-align: right;
+    margin: 0.5rem;
+}
+
+#recipient-label {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#recipient-input {
+    grid-column: 2;
+    grid-row: 1;
+    height: 1.25rem;
+    width: 30ch;
+}
+
+#host-label {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#host-input {
+    grid-column: 2;
+    grid-row: 2;
+    height: var(--standard-height);
+    width: 30ch;
+}
+
+#first-name-label {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#first-name-input {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#last-name-label {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#last-name-input {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#submit {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    margin: var(--standard-gap);
+    width: clamp(20ch, 30ch, 40ch);
+}
+
+#add-button {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#delete-button {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+input[type=text] {
+    font-size: var(--standard-height);
+    line-height: var(--standard-height);
+    max-width: 50ch;
+    margin: 0.5rem;
+}
+
+input[type=text]::placeholder {
+    color: var(--maroon);
+}
+
+input[type=button] {
+    height: calc(var(--standard-height) * 2);
+    margin: 0.5rem;
+    padding: 0.25rem;
+    background-color: var(--maroon);
+    color: var(--lightgray);
+    font-size: var(--standard-height);
+}
+
+input[type=button]:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    font-size: var(--standard-height);
+    background-color: var(--maroon);
+    color: white;
+    padding: 0.5rem 2.25rem;
+    margin: var(--standard-gap) 0;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#volunteer-list-label {
+    grid-column: 1;
+    grid-row: 5;
+    text-align: right;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    font-size: var(--standard-height);
+}
+
+#volunteer-list-area {
+    grid-column: 2 / 4;
+    grid-row: 5;
+    height: 15rem;
+    max-width: 65ch;
+    margin: 0.5rem;
+    font-size: var(--standard-height);
+}
+
+#sort-button {
+    grid-column: 2;
+    grid-row: 6;
+}
+
+#clear-button {
+    grid-column: 2;
+    grid-row: 7;
+}
+
+#outputArea {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin: 0 var(--standard-gap);
+    background-color: var(--lightgray);
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: auto; /* footer at the bottom of the page by setting top margin */
+    color: var(--charcoal);
+}
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+}
